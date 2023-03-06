@@ -422,3 +422,164 @@ section.productosHome{
         margin-top: 50px;
     }
 }
+
+section.banner{
+    padding: 100px 0;
+    background-color: #FCE180;
+    position: relative;
+    .figura1{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        grid-gap: 50px;
+        position: relative;
+        z-index: 2;
+        .part1{
+            width: 60%;
+            margin-bottom: 50px;
+            h2{
+                font-family: var(--fuente-Mina);
+                font-weight: 700;
+                font-size: 45px;                
+            }
+            p{
+                font-family: var(--fuente-Noto);
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                margin-top: 20px;
+            }
+            a{
+                font-family: var(--fuente-Noto);
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                padding: 16px 40px;
+                border: 2px solid #000000;
+                color: #000;
+                border-radius: 39px;
+                text-decoration: none;
+                display: block;
+                width: fit-content;
+                margin-top: 50px;
+            }
+        }
+        .part2{
+            width: 40%;
+            .img{
+                position: relative;
+                img{
+                    position: relative;
+                    z-index: 2;
+                }
+                .fondo{
+                    position: absolute;
+                    top: 0;
+                    z-index: 1;
+                    left: 68px;
+                }
+            }
+        }
+    }
+}
+
+.banner2{
+    padding: 100px 0;
+    padding-bottom: 0;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        grid-gap: 70px;
+        .part1{
+            display: flex;
+        }
+        .part2{
+            h2{
+                font-family: var(--fuente-Mina);
+                font-weight: 700;
+                font-size: 45px;
+            }
+            p{
+                padding-top: 20px;
+                font-family: var(--fuente-Noto);
+                font-weight: 400;
+                font-size: 20px;
+            }
+            .buttonAmarillo{
+                display: block;
+                width: fit-content;
+            }
+        }
+    }
+}
+
+footer{
+    background-color: #4CA95A;
+    padding-top: 50px;
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    .listas{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        ul{
+            li{
+                font-family: var(--fuente-Noto);
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                color: #fff;
+                margin: 5px 0;
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+            li:first-child{
+                margin-top: 0;
+            }
+            li:last-child{
+                margin-bottom: 0;
+            }
+        }
+        .part3 a{
+            display: flex;
+            align-items: center;
+            font-family: var(--fuente-Noto);
+            font-weight: 400;
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff;
+            margin-top: 20px;
+            img{
+                margin-right: 10px;
+            }
+        }
+    }
+    .pie{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 7px;
+        P{
+            color: #fff;
+            font-family: var(--fuente-Noto);
+            font-weight: 400;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        .corazon{
+            margin: 0 5px;
+        }
+    }
+}
