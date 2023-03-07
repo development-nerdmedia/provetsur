@@ -14,6 +14,14 @@ $('.marquee_home').marquee({
     duplicated: true,
 });
 
+document.addEventListener("click", function (e) {
+    if (e.target.closest("header .navigation ul li ul li a")) {
+        var categoriaLink = e.target.textContent
+        localStorage.setItem('CatNovedad1', `${categoriaLink}`);
+    }else{
+        localStorage.setItem('CatNovedad1', `none`);
+    }
+})
 
 
 MyApp = {
@@ -143,11 +151,8 @@ MyApp = {
             for (let i = 0; i < sliders.length; i++) {
                 if (sliders[i].getAttribute("data-category") !== cat) {
                     sliders[i].style.display = "none";
-                }
-                
+                }                
             }
-
-
 
             for (let i = 0; i < enlaces.length; i++) {
                 textoitem = enlaces[i].textContent;
@@ -163,8 +168,130 @@ MyApp = {
                     $(`.productosHome .swiper[data-category="${categoria}"]`).show();
                 })
             })
+        }
+    },
+    categorias: {
+        init: function () {
+            //document.querySelector("section.productosPage .menus ul li").classList.add("select");        
+            const enlaces2 = document.querySelectorAll('section.productosPage .menus ul li');
+            const enlaces3 = document.querySelectorAll('section.productosPage .menus .submenuCategory');
+            const enlaces4 = document.querySelectorAll('section.productosPage .menus .submenuCategory button');
+            var categoriaClicK = localStorage.getItem("CatNovedad1");
+
+            if (categoriaClicK == "none") {
+                document.querySelector("section.productosPage .menus ul li").classList.add("select");        
+            }
+
+            let listaTitle = [];
+
+            for (let i = 0; i < enlaces2.length; i++) {
+                textoitem = enlaces2[i].textContent;        
+                listaTitle.push(textoitem);
+            }
+
+            if (listaTitle.includes(categoriaClicK)) {
+                for (let y = 0; y < enlaces2.length; y++) {        
+                    if (categoriaClicK === enlaces2[y].textContent) {        
+                        document.querySelector("section.productosPage .menus ul li").classList.remove("select");        
+                        enlaces2[y].classList.add('select')        
+                    }        
+                }        
+            }
 
 
+            $('.itemProducto').hide();
+
+            var categoryMain = document.querySelector('section.productosPage .menus ul li.select').textContent;   
+
+            if (categoryMain === "Todos") {
+                $(`.itemProducto`).show(0);
+            } else {
+                $(`.itemProducto[data-category="${categoryMain}"]`).show();
+                var cat1 = document.querySelector('section.productosPage .menus ul li.select').getAttribute("data-category");
+                for (let i = 0; i < enlaces3.length; i++) {
+                    if (enlaces3[i].getAttribute("data-category") == cat1) {
+                        $(`.submenuCategory[data-category="${cat1}"]`).show();
+                        $(`.submenuCategory`).not(`[data-category="${cat1}"]`).hide();
+                    }
+                    
+                }
+            }
+
+            enlaces2.forEach((elemento) => {
+                elemento.addEventListener('click', (evento) => {
+                    enlaces2.forEach((enlace2) => enlace2.classList.remove('select'));
+                    evento.target.classList.add('select');
+                    var categoria = evento.target.textContent;
+                    $(`.itemProducto`).not(`[data-category="${categoria}"]`).hide();
+                    $(`.itemProducto[data-category="${categoria}"]`).show();
+                    if (categoria === "Todos") {
+                        $(`.itemProducto`).show();
+                        $(`.submenuCategory`).hide();
+                    }
+
+                    var categoria2 = evento.target.getAttribute("data-category"); 
+                    console.log(categoria2);
+                    
+                    for (let i = 0; i < enlaces3.length; i++) {
+                        if (enlaces3[i].getAttribute("data-category") == categoria2) {
+                            $(`.submenuCategory[data-category="${categoria2}"]`).show();
+                            $(`.submenuCategory`).not(`[data-category="${categoria2}"]`).hide();
+                        }
+                    }        
+                    for (let i = 0; i < enlaces4.length; i++) {
+                        enlaces4[i].classList.remove("select")                        
+                    }            
+                })
+            })
+
+            enlaces4.forEach((elemento) => {
+                elemento.addEventListener('click', (evento) => {
+                    enlaces4.forEach((enlaces4) => enlaces4.classList.remove('select'));
+                    evento.target.classList.add('select');
+                    var categoria4 = evento.target.textContent;
+                    $(`.itemProducto`).not(`[data-subcategory="${categoria4}"]`).hide();
+                    $(`.itemProducto[data-subcategory="${categoria4}"]`).show();
+                })
+            })
+        }
+    },
+    tabs: {
+        init: function () {
+            document.querySelector("section.producto .tabs ul li").classList.add("select");    
+            const enlacesProducto = document.querySelectorAll('section.producto .tabs ul li');
+            const parrafoProducto = document.querySelectorAll('section.producto .tabs .descripcion p');
+
+            var texto = ''
+            for (let i = 0; i < enlacesProducto.length; i++) {
+                if (enlacesProducto[i].classList.contains("select")) {
+                    texto = enlacesProducto[i].textContent   
+                    $(`.tabs .descripcion p`).not(`[data-category="${texto}"]`).hide();
+                    $(`.tabs .descripcion p[data-category="${texto}"]`).show(); 
+                }                
+            }
+
+            enlacesProducto.forEach((elemento) => {
+                elemento.addEventListener('click', (evento) => {
+                    enlacesProducto.forEach((enlacesProducto) => enlacesProducto.classList.remove('select'));
+                    evento.target.classList.add('select');
+                    var categoria = evento.target.textContent;
+                    $(`.tabs .descripcion p`).not(`[data-category="${categoria}"]`).hide();
+                    $(`.tabs .descripcion p[data-category="${categoria}"]`).show();       
+                })
+            })
+        }
+    },
+    relacionados: {
+        init: function () {
+            var swiper3 = new Swiper(".productosRelacionados", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                navigation: {
+                    nextEl: ".relacionados .swiper-button-next",
+                    prevEl: ".relacionados .swiper-button-prev",
+                },
+            })
         }
     }
 }
@@ -184,6 +311,19 @@ if ($('.beneficios').length > 0) {
 if ($('.productosHome').length > 0) {
     MyApp.productosHome.init();
 }
+
+if ($('.productosPage .menus').length > 0) {
+    MyApp.categorias.init();
+}
+
+if ($('section.producto .part2 .tabs').length > 0) {
+    MyApp.tabs.init();
+}
+
+if ($('section.relacionados').length > 0) {
+    MyApp.relacionados.init();
+}
+
 
 
 
