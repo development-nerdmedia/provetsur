@@ -18,8 +18,17 @@ document.addEventListener("click", function (e) {
     if (e.target.closest("header .navigation ul li ul li a")) {
         var categoriaLink = e.target.textContent
         localStorage.setItem('CatNovedad1', `${categoriaLink}`);
-    }else{
+    } else {
         localStorage.setItem('CatNovedad1', `none`);
+    }
+    if (e.target.closest(".checkbox-box .labelPoliticas")) {
+        document.querySelector(".labelPoliticas").classList.toggle("activo");
+    }
+    if (e.target.closest(".checkbox-box .recordarPassword")) {
+        document.querySelector(".recordarPassword").classList.toggle("activo");
+    }
+    if (e.target.closest(".navigation button.buscador") || e.target.closest("section.buscador .top")) {
+        document.querySelector("section.buscador").classList.toggle("open");
     }
 })
 
@@ -89,23 +98,23 @@ MyApp = {
             var ultimoElementoHover = null;
 
             elementos.forEach((elemento) => {
-              elemento.addEventListener('mouseover', () => {
-                if (ultimoElementoHover) {
-                  ultimoElementoHover.classList.remove('select');
-                }
-                elemento.classList.add('select');
-                ultimoElementoHover = elemento;
-
-                var categoria = elemento.getAttribute('data-category')
-
-                for (let i = 0; i < imgs.length; i++) {
-                    imgs[i].classList.remove('select');
-                    if (categoria == imgs[i].getAttribute('data-category')) {
-                        imgs[i].classList.add('select');
+                elemento.addEventListener('mouseover', () => {
+                    if (ultimoElementoHover) {
+                        ultimoElementoHover.classList.remove('select');
                     }
-                }
+                    elemento.classList.add('select');
+                    ultimoElementoHover = elemento;
 
-              });
+                    var categoria = elemento.getAttribute('data-category')
+
+                    for (let i = 0; i < imgs.length; i++) {
+                        imgs[i].classList.remove('select');
+                        if (categoria == imgs[i].getAttribute('data-category')) {
+                            imgs[i].classList.add('select');
+                        }
+                    }
+
+                });
             });
         }
     },
@@ -151,7 +160,7 @@ MyApp = {
             for (let i = 0; i < sliders.length; i++) {
                 if (sliders[i].getAttribute("data-category") !== cat) {
                     sliders[i].style.display = "none";
-                }                
+                }
             }
 
             for (let i = 0; i < enlaces.length; i++) {
@@ -179,29 +188,29 @@ MyApp = {
             var categoriaClicK = localStorage.getItem("CatNovedad1");
 
             if (categoriaClicK == "none") {
-                document.querySelector("section.productosPage .menus ul li").classList.add("select");        
+                document.querySelector("section.productosPage .menus ul li").classList.add("select");
             }
 
             let listaTitle = [];
 
             for (let i = 0; i < enlaces2.length; i++) {
-                textoitem = enlaces2[i].textContent;        
+                textoitem = enlaces2[i].textContent;
                 listaTitle.push(textoitem);
             }
 
             if (listaTitle.includes(categoriaClicK)) {
-                for (let y = 0; y < enlaces2.length; y++) {        
-                    if (categoriaClicK === enlaces2[y].textContent) {        
-                        document.querySelector("section.productosPage .menus ul li").classList.remove("select");        
-                        enlaces2[y].classList.add('select')        
-                    }        
-                }        
+                for (let y = 0; y < enlaces2.length; y++) {
+                    if (categoriaClicK === enlaces2[y].textContent) {
+                        document.querySelector("section.productosPage .menus ul li").classList.remove("select");
+                        enlaces2[y].classList.add('select')
+                    }
+                }
             }
 
 
             $('.itemProducto').hide();
 
-            var categoryMain = document.querySelector('section.productosPage .menus ul li.select').textContent;   
+            var categoryMain = document.querySelector('section.productosPage .menus ul li.select').textContent;
 
             if (categoryMain === "Todos") {
                 $(`.itemProducto`).show(0);
@@ -213,7 +222,7 @@ MyApp = {
                         $(`.submenuCategory[data-category="${cat1}"]`).show();
                         $(`.submenuCategory`).not(`[data-category="${cat1}"]`).hide();
                     }
-                    
+
                 }
             }
 
@@ -229,18 +238,18 @@ MyApp = {
                         $(`.submenuCategory`).hide();
                     }
 
-                    var categoria2 = evento.target.getAttribute("data-category"); 
+                    var categoria2 = evento.target.getAttribute("data-category");
                     console.log(categoria2);
-                    
+
                     for (let i = 0; i < enlaces3.length; i++) {
                         if (enlaces3[i].getAttribute("data-category") == categoria2) {
                             $(`.submenuCategory[data-category="${categoria2}"]`).show();
                             $(`.submenuCategory`).not(`[data-category="${categoria2}"]`).hide();
                         }
-                    }        
+                    }
                     for (let i = 0; i < enlaces4.length; i++) {
-                        enlaces4[i].classList.remove("select")                        
-                    }            
+                        enlaces4[i].classList.remove("select")
+                    }
                 })
             })
 
@@ -257,17 +266,17 @@ MyApp = {
     },
     tabs: {
         init: function () {
-            document.querySelector("section.producto .tabs ul li").classList.add("select");    
+            document.querySelector("section.producto .tabs ul li").classList.add("select");
             const enlacesProducto = document.querySelectorAll('section.producto .tabs ul li');
             const parrafoProducto = document.querySelectorAll('section.producto .tabs .descripcion p');
 
             var texto = ''
             for (let i = 0; i < enlacesProducto.length; i++) {
                 if (enlacesProducto[i].classList.contains("select")) {
-                    texto = enlacesProducto[i].textContent   
+                    texto = enlacesProducto[i].textContent
                     $(`.tabs .descripcion p`).not(`[data-category="${texto}"]`).hide();
-                    $(`.tabs .descripcion p[data-category="${texto}"]`).show(); 
-                }                
+                    $(`.tabs .descripcion p[data-category="${texto}"]`).show();
+                }
             }
 
             enlacesProducto.forEach((elemento) => {
@@ -276,7 +285,7 @@ MyApp = {
                     evento.target.classList.add('select');
                     var categoria = evento.target.textContent;
                     $(`.tabs .descripcion p`).not(`[data-category="${categoria}"]`).hide();
-                    $(`.tabs .descripcion p[data-category="${categoria}"]`).show();       
+                    $(`.tabs .descripcion p[data-category="${categoria}"]`).show();
                 })
             })
         }
@@ -293,7 +302,203 @@ MyApp = {
                 },
             })
         }
-    }
+    },
+    tabs2: {
+        init: function () {
+            document.querySelector("section.bannerInterna .part1 ul li").classList.add("select");
+            const enlacesProducto2 = document.querySelectorAll('section.bannerInterna .part1 ul li');
+
+            var texto = ''
+            for (let i = 0; i < enlacesProducto2.length; i++) {
+                if (enlacesProducto2[i].classList.contains("select")) {
+                    texto = enlacesProducto2[i].textContent
+                    $(`section.bannerInterna .part2 .container .contentInfo`).not(`[data-category="${texto}"]`).hide();
+                    $(`section.bannerInterna .part2 .container .contentInfo[data-category="${texto}"]`).show();
+                }
+            }
+
+            enlacesProducto2.forEach((elemento) => {
+                elemento.addEventListener('click', (evento) => {
+                    enlacesProducto2.forEach((enlacesProducto2) => enlacesProducto2.classList.remove('select'));
+                    evento.target.classList.add('select');
+                    var categoria = evento.target.textContent;
+                    $(`section.bannerInterna .part2 .container .contentInfo`).not(`[data-category="${categoria}"]`).hide();
+                    $(`section.bannerInterna .part2 .container .contentInfo[data-category="${categoria}"]`).show();
+                })
+            })
+        }
+    },
+    acordeon: {
+        init: function () {
+            let collapsible = document.querySelectorAll(".faq-collapsible");
+            collapsible.forEach((element) => {
+                element.addEventListener("click", (element) => {
+                    if (!element.target.parentElement.classList.contains('open')) {
+                        for (let i = 0; i < collapsible.length; i++) {
+                            collapsible[i].parentElement.classList.remove("open");
+                        }
+                        element.target.parentElement.classList.add("open");
+                    } else {
+                        element.target.parentElement.classList.remove("open");
+                    }
+
+                    const elements = document.querySelectorAll(".oculto");
+                    addClassToVisibleElements(elements, "visible");
+                });
+            });
+        }
+    },
+    validate: {
+        init: function () {
+          var formespacio = document.querySelectorAll(".form-group");    
+          var formespacioinput = document.querySelectorAll(".form-input.required");    
+          var formespacioinput2 = document.querySelectorAll(".form-input");    
+          var formespacioselect = document.querySelectorAll("form select");    
+          var formespacioselect = document.querySelectorAll(
+            ".formulario select.form-input"
+          );
+    
+          $(document).on("wheel", "input[type=number]", function (e) {
+            $(this).blur();
+          });
+    
+          function inputcheck() {
+            for (let i = 0; i < formespacioinput2.length; i++) {
+              if (!formespacioinput2[i].value) {
+                formespacioinput2[i].parentElement.parentElement.classList.remove(
+                  "ok"
+                );
+              } else {
+                formespacioinput2[i].parentElement.parentElement.classList.add(
+                  "ok"
+                );
+              }
+            }
+          }
+    
+          function validateInput(e) {
+            for (let y = 0; y < formespacioinput.length; y++) {
+              if (!formespacioinput[y].value) {
+                formespacioinput[y].parentElement.parentElement.classList.add(
+                  "error"
+                );    
+                e.preventDefault();
+              } else {
+                formespacioinput[y].parentElement.parentElement.classList.remove(
+                  "error"
+                );
+              }
+            }
+          }
+    
+          function validateSelect(e) {
+            for (let i = 0; i < formespacioselect.length; i++) {
+              if (formespacioselect[i].classList.contains("default")) {
+              } else {
+                if (formespacioselect[i].value == "") {
+                  formespacioselect[i].classList.add("falta");    
+                  e.preventDefault();
+                } else {
+                  formespacioselect[i].classList.remove("falta");
+                }
+              }
+            }
+          }
+    
+          function validatecheckbox(e) {
+            if (document.querySelector('input[name="motivo"]:checked')) {
+              if (!document.querySelector('input[name="motivo"]:checked')) {
+                document
+                  .querySelector(".texto-check-motivo")
+                  .classList.add("error");    
+                // e.preventDefault();
+              } else {
+                document
+                  .querySelector(".texto-check-motivo")
+                  .classList.remove("error");
+              }
+            }
+          }
+    
+          $(".form-input").on("change", () => {
+            formespacioinput.forEach((element) => {
+              if (!element.value == "") {
+                element.parentElement.parentElement.classList.add("ok");
+              } else {
+                element.parentElement.parentElement.classList.remove("ok");
+              }
+            });
+          });
+    
+          function validateCheck(e) {
+            formespaciocheck = document.querySelectorAll(
+              ".formulario input.required[type='checkbox']"
+            );
+    
+            for (let i = 0; i < formespaciocheck.length; i++) {
+              if (formespaciocheck[i].checked) {
+                formespaciocheck[i].parentElement.parentElement.classList.remove(
+                  "error"
+                );
+              } else {
+                formespaciocheck[i].parentElement.parentElement.classList.add(
+                  "error"
+                );
+              }
+            }
+          }
+    
+          document.addEventListener("click", function (e) {
+            if (e.target.closest(".form-input")) {
+              formespacio.forEach(function (shinyItem) {
+                shinyItem.classList.remove("focusin");
+              });
+    
+              e.target.parentElement.parentElement.classList.add("focusin");
+            } else {
+              formespacio.forEach(function (shinyItem) {
+                shinyItem.classList.remove("focusin");
+              });
+            }
+    
+            inputcheck();
+    
+            if (e.target.closest("form button")) {
+              validateInput(e);
+    
+              validateSelect(e);
+    
+              validatecheckbox(e);
+    
+              validateCheck(e);
+            }
+          });
+    
+          document.addEventListener("keydown", function (event) {
+            if (event.keyCode == 9) {
+              for (let i = 0; i < formespacioinput2.length; i++) {
+                formespacioinput2[i].addEventListener("focusin", (event) => {
+                  formespacioinput2[i].parentElement.parentElement.classList.add(
+                    "focusin"
+                  );
+                });
+    
+                formespacioinput2[i].addEventListener("focusout", (event) => {
+                  formespacioinput2[i].parentElement.parentElement.classList.remove(
+                    "focusin"
+                  );
+    
+                  if (formespacioinput2[i].value) {
+                    formespacioinput2[i].parentElement.parentElement.classList.add(
+                      "ok"
+                    );
+                  }
+                });
+              }
+            }
+          });
+        },
+      },
 }
 
 if ($('.line_Productos').length > 0) {
@@ -322,6 +527,18 @@ if ($('section.producto .part2 .tabs').length > 0) {
 
 if ($('section.relacionados').length > 0) {
     MyApp.relacionados.init();
+}
+
+if ($('section.bannerInterna ul li').length > 0) {
+    MyApp.tabs2.init();
+}
+
+if ($('.faq-content').length > 0) {
+    MyApp.acordeon.init();
+}
+
+if ($('.formulario').length > 0) {
+    MyApp.validate.init();
 }
 
 
