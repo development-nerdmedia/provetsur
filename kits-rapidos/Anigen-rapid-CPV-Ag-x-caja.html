@@ -9,44 +9,62 @@
     <title>PROVETSUR | Anigen rapid CPV Ag x caja</title>
 </head>
 <body>
-    <header>
-      <p class="anuncio">
-        🚨 Envío gratis a todo Lima en compras superiores a 350 soles 🚨
-      </p>
-      <div class="container">
-        <nav class="navigation">
-          <div class="part1">
-            <ul>
-              <li class="fex select"><a href="../productos.html">Productos</a>
-                <ul>
-                  <li><a href="../productos.html"><img src="../img/sub-1.png" alt="">Kits rápidos</a></li>
-                  <li><a href="../productos.html"><img src="../img/sub-2.png" alt="">Vcheck</a></li>
-                </ul>
-              </li>
-              <li><a href="../nosotros.html">Nosotros</a></li>
-              <li><a href="../contacto.html">Contacto</a></li>
-            </ul>
-          </div>
-          <div class="logo">
-            <a href="../index.html"><img src="../img/logoPro.png" alt="" /></a>
-          </div>
-          <div class="part2">
-            <ul>
-              <li>
-                <a href=""><img src="../img/lupa.svg" alt="" /></a>
-              </li>
-              <li>
-                <a href=""><img src="../img/user.svg" alt="" /></a>
-              </li>
-              <li>
-                <a href=""><img src="../img/carrito.svg" alt="" /></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </header>
+  <header>
+    <p class="anuncio">
+      🚨 Envío gratis a todo Lima en compras superiores a 350 soles 🚨
+    </p>
+    <div class="container">
+      <nav class="navigation">
+        <div class="part1">
+          <ul>
+            <li class="fex"><a href="../productos.html">Productos</a>
+              <ul>
+                <li><a href="../productos.html"><img src="../img/sub-1.png" alt="">Kits rápidos</a></li>
+                <li><a href="../productos.html"><img src="../img/sub-2.png" alt="">Vcheck</a></li>
+              </ul>
+            </li>
+            <li><a href="../nosotros.html">Nosotros</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="logo">
+          <a href="../index.html"><img src="../img/logoPro.png" alt="" /></a>
+        </div>
+        <div class="part2">
+          <ul>
+            <li>
+              <button class="buscador"><img src="../img/lupa.svg" alt="" /></button>
+            </li>
+            <li>
+              <a href="../login.html"><img src="../img/user.svg" alt="" /></a>
+            </li>
+            <li>
+              <button><img src="../img/carrito.svg" alt="" /></button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
     <main>
+      <section class="buscador">
+        <div class="container">
+          <div class="top">
+            <img src="../img/close-x.svg" alt="">
+          </div>
+          <div class="content">
+            <h2>Encuentra lo que necesitas en nuestra tienda</h2>
+            <form action="../resultados.html" method="">
+              <div class="form-group">
+                <input type="text">
+                <button type="submit">
+                  <img src="../img/lupa.svg" alt="">
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
         <section class="producto">
             <div class="container">
               <div class="contentPart">
@@ -240,6 +258,8 @@
     </main>
 
     <footer>
+      <div class="waves" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-1.97,80.44 C170.71,9.39 318.56,7.42 500.27,80.44 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #4CA95A;"></path></svg></div>
+      <div class="content">
         <div class="container">
           <div class="logo">
             <img src="../img/logo-blanco.png" alt="" />
@@ -247,8 +267,8 @@
           <div class="listas">
             <div class="part1">
               <ul>
-                <li><a href="">Productos</a></li>
-                <li><a href="">Nosotros</a></li>
+                <li><a href="../productos.html">Productos</a></li>
+                <li><a href="../nosotros.html">Nosotros</a></li>
                 <li><a href="">Contacto</a></li>
                 <li><b>RUC:</b> 20514781002</li>
                 <li><b>Razón social:</b> PROVETSUR S.A.C.</li>
@@ -257,10 +277,10 @@
             <div class="part2">
               <ul>
                 <li><a href="">Política y privacidad</a></li>
-                <li><a href="">Términos y condiciones</a></li>
+                <li><a href="../terminos-y-condiciones.html">Términos y condiciones</a></li>
                 <li><a href="">Envíos y devoluciones</a></li>
                 <li><a href="">Métodos de pagos</a></li>
-                <li><a href="">Preguntas frecuentes</a></li>
+                <li><a href="../preguntas-frecuentes.html">Preguntas frecuentes</a></li>
               </ul>
             </div>
             <div class="part3">
@@ -285,7 +305,8 @@
             </p>
           </div>
         </div>
-      </footer>
+      </div>      
+    </footer>
   
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>

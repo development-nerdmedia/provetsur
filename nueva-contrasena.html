@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-        />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>PROVETSUR | Login</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>PROVETSUR | Gracias</title>
+    </head>
 <body>
   <header>
     <p class="anuncio">
@@ -49,74 +46,62 @@
       </nav>
     </div>
   </header>
+
     <main>
       <section class="buscador">
-        <div class="container">
-          <div class="top">
-            <img src="img/close-x.svg" alt="">
-          </div>
-          <div class="content">
-            <h2>Encuentra lo que necesitas en nuestra tienda</h2>
-            <form action="resultados.html" method="">
-              <div class="form-group">
-                <input type="text">
-                <button type="submit">
-                  <img src="img/lupa.svg" alt="">
-                </button>
-              </div>
-            </form>
-          </div>
+      <div class="container">
+        <div class="top">
+          <img src="img/close-x.svg" alt="">
         </div>
-      </section>
-      
-        <section class="acceso">
-            <div class="container">
-                <div class="part1">
-                    <h2>Iniciar sesión</h2>
-                    <div class="formulario">
-                        <form action="" method="">
-                            <fieldset>
-                                <div class="form-group">
-                                    <span>
-                                        <input class="form-input required" validate="0" type="email" required="true" name="email" id="email">
-                                    </span>
-                                    <label for="email">Correo:</label>
-                                    <span class="textFal">Campo obligatorio</span>
-                                </div>                                
-                                <div class="form-group">
-                                    <span>
-                                        <input class="form-input required" validate="0" type="password" required="true" name="name" id="name">
-                                    </span>
-                                    <label for="name">Contraseña:</label>
-                                    <span class="textFal">Campo obligatorio</span>
-                                </div>
-                                <div class="checkbox-box" data-aos="fade-up" data-aos-once="true">
-                                    <span>
-                                        <input type="checkbox" required="" id="recordarPassword">
-                                    </span>
-                                    <label class="recordarPassword" for="recordarPassword"></label>
-                                    <p>Recordar contraseña</p>
-                                </div>
-                                <a href="nueva-contrasena.html" class="olvPassword">¿Olvidaste tu contraseña?</a>
-                                <div class="enviar">
-                                    <button class="buttonAmarillo" type="submit">Iniciar sesión</button>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-                <div class="part2">
-                    <h2>¿Por qué registrarse?</h2>
-                    <ul>
-                        <li>Podrás realizar tus compras de manera satisfactoria.</li>
-                        <li>Tenemos un registro exclusivo para veterinarios.</li>
-                        <li>Tendrás un registro de compras.</li>
-                        <li>Contamos con delivery y recojo en oficina.</li>
-                        <li>Puedes comprar en cualquier momento del día.</li>
-                    </ul>
-                    <a href="sign-up.html" class="buttonAmarillo">Registrarse</a>
-                </div>
+        <div class="content">
+          <h2>Encuentra lo que necesitas en nuestra tienda</h2>
+          <form action="resultados.html" method="">
+            <div class="form-group">
+              <input type="text">
+              <button type="submit">
+                <img src="img/lupa.svg" alt="">
+              </button>
             </div>
+          </form>
+        </div>
+      </div>
+    </section>
+        <section class="crearPassword">
+            <div class="container">
+                <h1>Crea una contraseña</h1>
+                <div class="formulario">
+                    <form action="gracias-nuevoPassword.html" method="">
+                        <fieldset>
+                            <div class="form-group">
+                                <span>
+                                    <input class="form-input required" validate="0" type="email" required="true" name="email" id="email">
+                                </span>
+                                <label for="email">Correo electrónico:</label>
+                                <span class="textFal">Campo obligatorio</span>
+                            </div> 
+                            <div class="form-colum">
+                                <div class="form-group">
+                                    <span>
+                                        <input class="form-input required" validate="0" type="password" required="true" name="password" id="password">
+                                    </span>
+                                    <label for="name">Contraseña nueva:</label>
+                                    <span class="textFal">Campo obligatorio</span>
+                                </div>
+                                <div class="form-group">
+                                    <span>
+                                        <input class="form-input required" validate="0" type="password" required="true" name="repPassword" id="repPassword">
+                                    </span>
+                                    <label for="name">Repite la contraseña nueva:</label>
+                                    <span class="textFal">Campo obligatorio</span>
+                                </div>
+                            </div>
+                            <div class="enviar">
+                                <button class="buttonAmarillo" type="submit">Enviar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>            
         </section>
     </main>
 

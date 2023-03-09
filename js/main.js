@@ -33,6 +33,22 @@ document.addEventListener("click", function (e) {
 })
 
 
+var content = document.querySelectorAll(".waves");
+            for (let i = 0; i < content.length; i++) {
+                var tl = gsap.timeline({
+                    scrollTrigger: {
+                        //markers: true,
+                        trigger: content,
+                        start: '-180% 80%',
+                        end: '100% 100%',
+                        scrub: 1,
+                    },
+                });
+                tl.to(content[i], { top: -92, duration: 10000, ease: "none" })
+            }
+
+
+
 MyApp = {
     header: {
         init: function () {

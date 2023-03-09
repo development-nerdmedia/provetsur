@@ -84,7 +84,8 @@ header {
         font-weight: 700;
         font-size: 20px;
         color: #000;
-        text-decoration: none; }
+        text-decoration: none;
+        display: flex; }
       header .navigation ul li ul {
         display: none;
         position: absolute;
@@ -194,7 +195,8 @@ section.buscador {
         border-radius: 15px; }
       section.buscador form .form-group button {
         border: none;
-        background-color: transparent; }
+        background-color: transparent;
+        cursor: pointer; }
 
 section.buscador.open {
   transform: translate(0); }
@@ -503,7 +505,7 @@ section.banner {
 
 .banner2 {
   padding: 100px 0;
-  padding-bottom: 0; }
+  padding-bottom: 30px; }
   .banner2 .container {
     display: flex;
     justify-content: space-between;
@@ -525,8 +527,15 @@ section.banner {
       width: fit-content; }
 
 footer {
-  background-color: #4CA95A;
-  padding-top: 50px; }
+  position: relative;
+  z-index: 2; }
+  footer .waves {
+    position: absolute;
+    top: -0px;
+    width: 100%;
+    z-index: -1; }
+  footer .content {
+    background-color: #4CA95A; }
   footer .logo {
     display: flex;
     align-items: center;
@@ -1513,4 +1522,117 @@ section.registro {
     font-size: 45px; }
   section.registro .formulario {
     max-width: 872px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    margin-top: 30px; }
+
+section.thanksContact {
+  background-color: #FCE180;
+  height: 100vh;
+  width: 100%;
+  position: relative; }
+  section.thanksContact .top {
+    z-index: 2; }
+  section.thanksContact .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    section.thanksContact .container .top {
+      position: absolute;
+      right: 0;
+      top: 137px;
+      cursor: pointer; }
+    section.thanksContact .container h1 {
+      font-family: var(--fuente-Mina);
+      font-weight: 700;
+      font-size: 45px;
+      color: #000000;
+      text-align: center; }
+    section.thanksContact .container p {
+      font-family: var(--fuente-Noto);
+      font-weight: 400;
+      font-size: 20px;
+      color: #000000;
+      text-align: center; }
+    section.thanksContact .container a {
+      background-color: transparent;
+      border: 2px solid #000000;
+      border-radius: 39px; }
+    section.thanksContact .container .content {
+      max-width: 875px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+  section.thanksContact .img1 {
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+  section.thanksContact .img3 {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  section.thanksContact .img2 {
+    position: absolute;
+    top: 80px;
+    left: 150px; }
+
+section.crearPassword {
+  padding-top: 280px;
+  padding-bottom: 100px; }
+  section.crearPassword h1 {
+    font-family: var(--fuente-Mina);
+    font-weight: 700;
+    font-size: 45px;
+    color: #000000;
+    text-align: center; }
+  section.crearPassword .formulario {
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 900px; }
+    section.crearPassword .formulario .enviar {
+      display: flex;
+      justify-content: center; }
+
+section.terminosPage {
+  padding-top: 280px;
+  padding-bottom: 100px; }
+  section.terminosPage h1 {
+    font-family: var(--fuente-Mina);
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 136.5%;
+    color: #000000;
+    text-align: center; }
+  section.terminosPage .contentText {
+    margin-top: 30px; }
+    section.terminosPage .contentText p, section.terminosPage .contentText li {
+      font-family: var(--fuente-Noto);
+      font-weight: 400;
+      font-size: 20px;
+      color: #000000;
+      margin: 30px 0; }
+    section.terminosPage .contentText li {
+      margin: 0;
+      position: relative;
+      list-style: none; }
+    section.terminosPage .contentText ul {
+      margin-left: 20px;
+      margin-bottom: 30px; }
+    section.terminosPage .contentText li::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #4CA95A;
+      border-radius: 50%;
+      left: -18px;
+      top: 8px; }
+    section.terminosPage .contentText p:first-child {
+      margin-top: 0; }
+    section.terminosPage .contentText h2 {
+      font-family: var(--fuente-Mina);
+      font-weight: 700;
+      font-size: 35px;
+      color: #4CA95A; }

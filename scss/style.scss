@@ -95,6 +95,7 @@ header{
                     font-size: 20px;
                     color: #000;
                     text-decoration: none;
+                    display: flex;
                 }
                 ul{
                     display: none;
@@ -238,6 +239,7 @@ section.buscador{
             button{
                 border: none;
                 background-color: transparent;
+                cursor: pointer;
             }
         }
     }
@@ -624,7 +626,7 @@ section.banner{
 
 .banner2{
     padding: 100px 0;
-    padding-bottom: 0;
+    padding-bottom: 30px;
     .container{
         display: flex;
         justify-content: space-between;
@@ -654,8 +656,18 @@ section.banner{
 }
 
 footer{
-    background-color: #4CA95A;
-    padding-top: 50px;
+    position: relative;
+    z-index: 2;
+    .waves{
+        position: absolute;
+        top: -0px;
+        width: 100%;
+        z-index: -1;
+    }
+    .content{
+        //padding-top: 50px;
+        background-color: #4CA95A;
+    }
     .logo{
         display: flex;
         align-items: center;
@@ -1885,5 +1897,142 @@ section.registro{
     .formulario{
         max-width: 872px;
         margin: 0 auto;
+        margin-top: 30px;
+    }
+}
+
+section.thanksContact{
+    background-color: #FCE180;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    .top{
+        z-index: 2;
+    }
+    .container{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .top{
+            position: absolute;
+            right: 0;
+            top: 137px;
+            cursor: pointer;
+        }
+        h1{
+            font-family: var(--fuente-Mina);
+            font-weight: 700;
+            font-size: 45px;
+            color: #000000;
+            text-align: center;
+        }
+        p{
+            font-family: var(--fuente-Noto);
+            font-weight: 400;
+            font-size: 20px;
+            color: #000000;
+            text-align: center;
+        }
+        a{
+            background-color: transparent;
+            border: 2px solid #000000;
+            border-radius: 39px;
+        }
+        .content{
+            max-width: 875px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .img1{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .img3{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .img2{
+        position: absolute;
+        top: 80px;
+        left: 150px;
+    }
+}
+
+section.crearPassword{
+    padding-top: 280px;
+    padding-bottom: 100px;
+    h1{
+        font-family: var(--fuente-Mina);
+        font-weight: 700;
+        font-size: 45px;
+        color: #000000;
+        text-align: center;
+    }
+    .formulario{
+        margin: 0 auto;
+        margin-top: 30px;
+        max-width: 900px;
+        .enviar{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+section.terminosPage{
+    padding-top: 280px;
+    padding-bottom: 100px;
+    h1{
+        font-family: var(--fuente-Mina);
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 136.5%;       
+        color: #000000;
+        text-align: center;
+    }
+    .contentText{
+        margin-top: 30px;
+        p, li{
+            font-family: var(--fuente-Noto);
+            font-weight: 400;
+            font-size: 20px;        
+            color: #000000;
+            margin: 30px 0;
+        }
+        li{
+            margin: 0;
+            position: relative;
+            list-style: none;
+        }
+        ul{
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+        li::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #4CA95A;
+            border-radius: 50%;
+            left: -18px;
+            top: 8px;
+        }
+        p:first-child{
+            margin-top: 0;
+        }
+        h2{
+            font-family: var(--fuente-Mina);
+            font-weight: 700;
+            font-size: 35px;
+            color: #4CA95A;
+        }
     }
 }
