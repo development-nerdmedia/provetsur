@@ -30,6 +30,10 @@ document.addEventListener("click", function (e) {
     if (e.target.closest(".navigation button.buscador") || e.target.closest("section.buscador .top")) {
         document.querySelector("section.buscador").classList.toggle("open");
     }
+    if (e.target.closest(".navigation button.carrito") || e.target.closest("section.carritoView .title button")) {
+      document.querySelector("section.carritoView").classList.toggle("open");
+      document.querySelector("section.filtro").classList.toggle("open");
+    }
 })
 
 
@@ -479,7 +483,7 @@ MyApp = {
     
             inputcheck();
     
-            if (e.target.closest("form button")) {
+            if (e.target.closest(".formulario form button")) {
               validateInput(e);
     
               validateSelect(e);
