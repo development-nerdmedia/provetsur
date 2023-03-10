@@ -111,59 +111,55 @@
             <div class="container">
                 <ul>
                     <li>Carrito de compras</li>
-                    <li class="select">Entrega</li>
-                    <li>Método de pago</li>
+                    <li>Entrega</li>
+                    <li class="select">Método de pago</li>
                 </ul>
             </div>
           </div>
 
           <section class="pageEtapa1">
             <div class="container">
-                <h2>Carrito de compras</h2>
+                <h2>Elije un método de pago</h2>
                 <div class="content">
                     <div class="part1">
-                      <div class="faq-content">
-                        <div class="faq-container" category-tab="términos-y-condiciones">
-                            <div class="faq-collapsible">
-                                <div class="contentTextEfe">
-                                    <div class="img"><img src="../img/icon-retiro.svg" alt=""></div>
-                                    <h3 class="oculto visible">Retiro</h3>
-                                </div>
-                                <img src="../img/flecha-negra.svg" alt="">
-                            </div>
-                            <div class="faq-answer">
-                                <p>El retiro de tu pedido se puede realizar en nuestra oficina.</p>
-                                <p>Si tu pedido fue realizado antes de las 12 :00pm lo puedes retirar el mismo día. Por lo
-                                  contrario, lo puedes recoger a partir del día siguiente.</p>
-                                <p><b>Nuestros horarios son los siguientes:</b></p>
-                                <p>Lunes a Viernes: 9am a 5pm</p>
-                            </div>
+                      <div class="metodoPago">
+                        <h2>Método de pago:</h2>
+                        <div class="eleccion">
+                          <div class="checkbox-box">
+                            <label>                              
+                              <input type="radio" name="metodo" value="op1">
+                            </label>
+                            <p>Tarjetas de Crédito y Débito (Visa, Masercard,Diners)</p>
+                          </div>
+                          <div class="checkbox-box">
+                            <label>                              
+                              <input type="radio" name="metodo" value="op2">
+                            </label>
+                            <p>Transferencia</p>
+                          </div>
                         </div>
-                        <div class="faq-container" category-tab="políticas-de-protección-de-datos-personales">
-                            <div class="faq-collapsible">
-                              <div class="contentTextEfe">
-                                <div class="img"><img src="../img/delivery.svg" alt=""></div>
-                                <h3 class="oculto visible">Delivery</h3>
-                              </div>
-                              <img src="../img/flecha-negra.svg" alt="">
-                            </div>
-                            <div class="faq-answer">
-                                <p><b>Lima: s/. 10.00</b></p>
-                                <p>El delivery se realizará a la dirección registrada.</p>
-                                <p>Luego de la confirmación de pago, el pedido llegará a la dirección registrada en un plazo no mayor a 2 días útiles.</p>
-                                <p>Nos comunicaremos contigo cuando tu pedido este listo.</p>
-                                <div class="imagenes">
-                                  <div class="">
-                                    <img src="../img/candado.svg" alt="">
-                                    <p>Compra fácil y <br> segura</p>
-                                  </div>
-                                  <div class="">
-                                    <img src="../img/escudo.svg" alt="">
-                                    <p>Entregas <br> protegidas</p>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>                     
+                        <div class="contentText">
+                          <p>BCP: <br> Cuenta bancaria: N°194-1553336-0-61 <br> Cuenta interbancaria: N°00219400155333606194</p>
+                          <p>Para asegurarte de que tu pedido se procese correctamente, es importante que realices el pago en las próximas 24 horas. Si el pago no se efectúa dentro del plazo establecido, lamentablemente no podremos ejecutar la programación de tu pedido. <br> Una vez que hayas confirmado el pago, iniciaremos el proceso de entrega de la mercadería. Ten en cuenta que el plazo de entrega comenzará a contar a partir del día siguiente a la confirmación del pago. Si realizas un depósito bancario, por favor envía el comprobante a la siguiente dirección de correo electrónico: <b>provetsur@gmail.com</b></p>
+                        </div>
+                      </div>                      
+                      <div class="eleccionBoleta">
+                        <h2>Comprobante de pago:</h2>
+                        <div class="eleccion">
+                          <div class="checkbox-box">
+                            <label>                              
+                              <input type="radio" name="voucher" value="opv1">
+                            </label>
+                            <p>Boleta</p>
+                          </div>
+                          <div class="checkbox-box">
+                            <label>                              
+                              <input type="radio" name="voucher" value="opv2">
+                            </label>
+                            <p>Factura</p>
+                          </div>
+                        </div>
+                        <p>La boleta o Factura será enviada al correo registrado.</p>
                       </div>
                       <div class="ayuda">
                         <h3>¿Necesitas ayuda?</h3>
@@ -194,16 +190,32 @@
                                       <p>Cupón de descuento: </p>
                                       <p>s/. <span>00.00</span></p>
                                   </div>
+                                  <div>
+                                      <p>Delivery:</p>
+                                      <p>s/. <span>00.00</span></p>
+                                  </div>
                                 </div>
                                 <div>
                                     <p>Total:</p>
                                     <p>s/. <span>00.00</span></p>
                                 </div>
-                                <a href="pago-3.html" class="buttonAmarillo">Continuar</a>
+                                <button class="pagar buttonAmarillo">Pagar</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+          </section>
+
+          <section class="formularioPago">
+            <div class="container">
+              <div class="imagen">
+                <img src="../img/formularioPago.png" alt="">
+                <div class="top">x</div>
+                <div class="button">
+                  <a href="confirmacion-compra.html">Pagar: s/00.00</a>
+                </div>
+              </div>
             </div>
           </section>
           

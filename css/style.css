@@ -1412,7 +1412,7 @@ section.formularioPage {
 
 section.datosContacto {
   padding-top: 50px;
-  padding-bottom: 100px; }
+  padding-bottom: 150px; }
   section.datosContacto h2 {
     text-align: center;
     font-family: var(--fuente-Mina);
@@ -2029,7 +2029,7 @@ section.pageEtapa1 {
       section.pageEtapa1 .content .part1 .faq-content .faq-container.open:last-child {
         padding-bottom: 0px; }
       section.pageEtapa1 .content .part1 .ayuda {
-        margin-top: 100px; }
+        margin-top: 50px; }
         section.pageEtapa1 .content .part1 .ayuda h3 {
           font-family: var(--fuente-Mina);
           font-weight: 700;
@@ -2051,6 +2051,117 @@ section.pageEtapa1 {
               font-size: 20px;
               line-height: 226.19%;
               color: #000; }
+      section.pageEtapa1 .content .part1 .metodoPago h2 {
+        text-align: start;
+        font-size: 35px; }
+      section.pageEtapa1 .content .part1 .metodoPago .eleccion {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px; }
+        section.pageEtapa1 .content .part1 .metodoPago .eleccion p {
+          font-family: var(--fuente-Noto);
+          font-style: normal;
+          font-weight: 700;
+          font-size: 25px;
+          line-height: 165.19%;
+          color: #000000; }
+        section.pageEtapa1 .content .part1 .metodoPago .eleccion .checkbox-box {
+          display: flex;
+          align-items: center;
+          margin: 15px 0; }
+          section.pageEtapa1 .content .part1 .metodoPago .eleccion .checkbox-box input {
+            -webkit-appearance: auto;
+            width: 0;
+            display: none;
+            position: relative;
+            left: -50px; }
+          section.pageEtapa1 .content .part1 .metodoPago .eleccion .checkbox-box label {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            display: inline-block;
+            cursor: pointer;
+            margin-top: 2px;
+            position: relative;
+            border-radius: 50%;
+            margin-right: 10px;
+            position: relative; }
+            section.pageEtapa1 .content .part1 .metodoPago .eleccion .checkbox-box label.activo {
+              background-color: #000; }
+        section.pageEtapa1 .content .part1 .metodoPago .eleccion .checkbox-box:first-child {
+          margin-top: 0; }
+        section.pageEtapa1 .content .part1 .metodoPago .eleccion .checkbox-box:last-child {
+          margin-bottom: 0; }
+      section.pageEtapa1 .content .part1 .metodoPago .contentText {
+        margin-top: 15px;
+        margin-left: 30px; }
+        section.pageEtapa1 .content .part1 .metodoPago .contentText p {
+          font-family: var(--fuente-Noto);
+          font-weight: 400;
+          font-size: 20px;
+          color: #000000;
+          margin: 30px 0; }
+        section.pageEtapa1 .content .part1 .metodoPago .contentText p:first-child {
+          margin-top: 0; }
+        section.pageEtapa1 .content .part1 .metodoPago .contentText p:last-child {
+          margin-bottom: 0; }
+      section.pageEtapa1 .content .part1 .eleccionBoleta {
+        margin: 80px 0;
+        position: relative; }
+        section.pageEtapa1 .content .part1 .eleccionBoleta::before {
+          content: '';
+          position: absolute;
+          top: -40px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: #F8C301; }
+        section.pageEtapa1 .content .part1 .eleccionBoleta::after {
+          content: '';
+          position: absolute;
+          bottom: -40px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: #F8C301; }
+        section.pageEtapa1 .content .part1 .eleccionBoleta h2 {
+          font-size: 35px;
+          text-align: start; }
+        section.pageEtapa1 .content .part1 .eleccionBoleta p {
+          font-family: var(--fuente-Noto);
+          font-weight: 400;
+          font-size: 20px;
+          color: #000000;
+          margin-top: 20px; }
+        section.pageEtapa1 .content .part1 .eleccionBoleta .eleccion {
+          display: flex;
+          margin-top: 10px;
+          align-items: center;
+          grid-gap: 60px; }
+          section.pageEtapa1 .content .part1 .eleccionBoleta .eleccion p {
+            font-weight: 700;
+            font-size: 25px;
+            margin-top: 0px; }
+          section.pageEtapa1 .content .part1 .eleccionBoleta .eleccion .checkbox-box {
+            display: flex;
+            align-items: center; }
+            section.pageEtapa1 .content .part1 .eleccionBoleta .eleccion .checkbox-box input {
+              -webkit-appearance: auto;
+              width: 0;
+              display: none; }
+            section.pageEtapa1 .content .part1 .eleccionBoleta .eleccion .checkbox-box label {
+              width: 20px;
+              height: 20px;
+              border: 2px solid #000;
+              display: inline-block;
+              cursor: pointer;
+              margin-top: 2px;
+              position: relative;
+              border-radius: 50%;
+              margin-right: 10px;
+              position: relative; }
+              section.pageEtapa1 .content .part1 .eleccionBoleta .eleccion .checkbox-box label.activo {
+                background-color: #000; }
     section.pageEtapa1 .content .part2 {
       width: 40%; }
       section.pageEtapa1 .content .part2 .resumen {
@@ -2072,11 +2183,11 @@ section.pageEtapa1 {
           display: flex;
           justify-content: space-between;
           position: relative;
-          margin: 50px 0; }
+          margin: 40px 0; }
           section.pageEtapa1 .content .part2 .info div::before {
             content: '';
             position: absolute;
-            top: -25px;
+            top: -20px;
             left: 0;
             width: 100%;
             height: 3px;
@@ -2092,10 +2203,197 @@ section.pageEtapa1 {
           font-weight: 700;
           font-size: 25px;
           color: #000000; }
-        section.pageEtapa1 .content .part2 .info .descuento p {
-          font-weight: 400; }
+        section.pageEtapa1 .content .part2 .info .descuento {
+          display: block; }
+          section.pageEtapa1 .content .part2 .info .descuento div {
+            margin: 10px 0; }
+          section.pageEtapa1 .content .part2 .info .descuento div::before {
+            content: none; }
+          section.pageEtapa1 .content .part2 .info .descuento p {
+            font-weight: 400; }
         section.pageEtapa1 .content .part2 .info .buttonAmarillo {
           display: flex;
           justify-content: center;
           width: 100%;
-          margin-top: 0; }
+          margin-top: 0;
+          cursor: pointer; }
+
+.formularioPago {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  display: none; }
+  .formularioPago .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+    .formularioPago .container .imagen {
+      max-width: 360px;
+      position: relative; }
+      .formularioPago .container .imagen img {
+        width: 100%; }
+      .formularioPago .container .imagen .top {
+        position: absolute;
+        top: 5px;
+        right: 24px;
+        cursor: pointer;
+        font-family: var(--fuente-Noto);
+        font-size: 20px;
+        color: #fff; }
+      .formularioPago .container .imagen .button {
+        position: absolute;
+        bottom: 83px;
+        left: 8%;
+        width: 100%; }
+        .formularioPago .container .imagen .button a {
+          padding: 10px 66px;
+          background-color: #4CA95A;
+          font-family: var(--fuente-Noto);
+          font-weight: 700;
+          font-size: 25px;
+          color: #FEFEFE;
+          text-decoration: none;
+          border-radius: 8px; }
+
+.formularioPago.open {
+  display: block; }
+
+section.confirmacion {
+  padding-top: 280px;
+  padding-bottom: 200px; }
+  section.confirmacion .title {
+    margin: 0 auto;
+    max-width: 700px; }
+    section.confirmacion .title h1 {
+      text-align: center;
+      font-family: var(--fuente-Mina);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 72px;
+      color: #000000; }
+    section.confirmacion .title p {
+      font-family: var(--fuente-Noto);
+      font-weight: 400;
+      font-size: 20px;
+      text-align: center;
+      color: #000000; }
+  section.confirmacion .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    grid-gap: 80px; }
+    section.confirmacion .content .part1 {
+      width: 60%; }
+      section.confirmacion .content .part1 h2 {
+        font-family: var(--fuente-Mina);
+        font-size: 35px;
+        color: #4CA95A; }
+      section.confirmacion .content .part1 h3 {
+        font-family: var(--fuente-Noto);
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 34px;
+        text-align: center;
+        color: #000000;
+        text-align: start; }
+      section.confirmacion .content .part1 ul li {
+        list-style: none;
+        font-family: var(--fuente-Noto);
+        font-weight: 400;
+        font-size: 20px;
+        color: #000000;
+        margin: 10px 0; }
+      section.confirmacion .content .part1 div {
+        margin: 60px 0;
+        position: relative; }
+        section.confirmacion .content .part1 div::before {
+          content: '';
+          position: absolute;
+          bottom: -30px;
+          width: 100%;
+          height: 3px;
+          background-color: #F8C301; }
+      section.confirmacion .content .part1 div.datosUser {
+        margin-top: 30px; }
+      section.confirmacion .content .part1 div.metodoPagoFinal p {
+        margin: 10px 0; }
+      section.confirmacion .content .part1 div.metodoPagoFinal h3:last-child {
+        margin-top: 30px; }
+      section.confirmacion .content .part1 p {
+        font-family: var(--fuente-Noto);
+        font-weight: 400;
+        font-size: 20px;
+        color: #000000; }
+      section.confirmacion .content .part1 .consulta div::before, section.confirmacion .content .part1 .consulta::before {
+        content: none; }
+      section.confirmacion .content .part1 .imagenes {
+        display: flex;
+        grid-gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 20px; }
+        section.confirmacion .content .part1 .imagenes div {
+          display: flex;
+          grid-gap: 13px;
+          align-items: center;
+          margin: 0px 0; }
+          section.confirmacion .content .part1 .imagenes div p {
+            margin-top: 0;
+            font-family: var(--fuente-Noto);
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 226.19%;
+            color: #000; }
+    section.confirmacion .content .part2 {
+      width: 40%; }
+      section.confirmacion .content .part2 .resumen {
+        border-radius: 31px;
+        background-color: #E9F5EB; }
+        section.confirmacion .content .part2 .resumen .title {
+          background-color: #4CA95A;
+          padding: 15px 30px;
+          border-radius: 20px 20px 0 0; }
+          section.confirmacion .content .part2 .resumen .title h3 {
+            font-family: var(--fuente-Mina);
+            font-weight: 700;
+            font-size: 35px;
+            color: #FEFEFE;
+            text-align: center; }
+        section.confirmacion .content .part2 .resumen .info {
+          padding: 30px; }
+          section.confirmacion .content .part2 .resumen .info div {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 40px 0; }
+            section.confirmacion .content .part2 .resumen .info div::before {
+              content: '';
+              position: absolute;
+              top: -20px;
+              left: 0;
+              width: 100%;
+              height: 3px;
+              background-color: #7B7B7B; }
+          section.confirmacion .content .part2 .resumen .info div:first-child {
+            margin-top: 0; }
+            section.confirmacion .content .part2 .resumen .info div:first-child::before {
+              content: none; }
+          section.confirmacion .content .part2 .resumen .info div:last-child {
+            margin-bottom: 0px; }
+          section.confirmacion .content .part2 .resumen .info p {
+            font-family: var(--fuente-Noto);
+            font-weight: 700;
+            font-size: 25px;
+            color: #000000; }
+          section.confirmacion .content .part2 .resumen .info .descuento {
+            display: block; }
+            section.confirmacion .content .part2 .resumen .info .descuento div {
+              margin: 10px 0; }
+            section.confirmacion .content .part2 .resumen .info .descuento div::before {
+              content: none; }
+            section.confirmacion .content .part2 .resumen .info .descuento p {
+              font-weight: 400; }

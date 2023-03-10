@@ -34,23 +34,30 @@ document.addEventListener("click", function (e) {
       document.querySelector("section.carritoView").classList.toggle("open");
       document.querySelector("section.filtro").classList.toggle("open");
     }
+    if (e.target.closest("section.pageEtapa1 .content .part2 .info .buttonAmarillo") || e.target.closest(".formularioPago .container .imagen .top")) {
+      document.querySelector("section.filtro").classList.toggle("open");
+      document.querySelector("section.formularioPago").classList.toggle("open");
+    }
 })
 
 
-var content = document.querySelectorAll(".waves");
-            for (let i = 0; i < content.length; i++) {
-                var tl = gsap.timeline({
-                    scrollTrigger: {
-                        //markers: true,
-                        trigger: content,
-                        start: '-180% 80%',
-                        end: '100% 100%',
-                        scrub: 1,
-                    },
-                });
-                tl.to(content[i], { top: -92, duration: 10000, ease: "none" })
-            }
 
+
+
+        
+var content = document.querySelectorAll(".waves");
+for (let i = 0; i < content.length; i++) {
+    var tl = gsap.timeline({
+        scrollTrigger: {
+            //markers: true,
+            trigger: content,
+            start: '-180% 80%',
+            end: '100% 100%',
+            scrub: 1,
+        },
+    });
+    tl.to(content[i], { top: -92, duration: 10000, ease: "none" })
+}
 
 
 MyApp = {
@@ -518,7 +525,40 @@ MyApp = {
             }
           });
         },
-      },
+    },
+    inputRadio: {
+      init: function () {
+        const radios2 = document.querySelectorAll('input[name="voucher"]');
+        const radios = document.querySelectorAll('input[name="metodo"]');
+
+        radios2.forEach(radio => {
+          radio.addEventListener('click', () => {
+            for (let i = 0; i < radios2.length; i++) {
+              radios2[i].parentNode.classList.remove('activo');      
+            }
+            if (radio.checked) {
+              radio.parentNode.classList.add('activo');
+            } else {
+              radio.parentNode.classList.remove('activo');
+            }
+          });
+        });
+
+        radios.forEach(radio => {
+          radio.addEventListener('click', () => {
+            for (let i = 0; i < radios.length; i++) {
+              radios[i].parentNode.classList.remove('activo');;
+              
+            }
+            if (radio.checked) {
+              radio.parentNode.classList.add('activo');
+            } else {
+              radio.parentNode.classList.remove('activo');
+            }
+          });
+        });
+      }
+    }
 }
 
 if ($('.line_Productos').length > 0) {
@@ -559,6 +599,10 @@ if ($('.faq-content').length > 0) {
 
 if ($('.formulario').length > 0) {
     MyApp.validate.init();
+}
+
+if ($('.metodoPago').length > 0) {
+  MyApp.inputRadio.init();
 }
 
 
